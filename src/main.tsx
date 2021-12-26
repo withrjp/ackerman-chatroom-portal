@@ -13,21 +13,18 @@ function Main(): JSX.Element {
   return (
     <ConfigProvider locale={zhCN}>
       <UseRequestProvider value={{ requestMethod }}>
-        <Router>
-          <Switch>
-            <Route path="/">
-              <App />
-            </Route>
-          </Switch>
-        </Router>
+        <div className="h-screen">
+          <Router>
+            <Switch>
+              <Route path="/">
+                <App />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </UseRequestProvider>
     </ConfigProvider>
   )
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Main />
-  </React.StrictMode>,
-  document.getElementById('root'),
-)
+ReactDOM.render(<Main />, document.getElementById('root'))
